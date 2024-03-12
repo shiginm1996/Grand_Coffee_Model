@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/0d3236b76b.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(38, 29, 29);">
+    <div class="container-fluid">
+      <img src="{% static 'grand cof1.png' %}" height="60px" width="220px" alt="" style="margin-left: 80px;" >
+
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color: white;margin-left: 50px;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: white;margin-left: 30px;">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: white;margin-left: 30px;">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: white;margin-left: 30px;">About</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8000/ecommerceapp/buyerprof/" style="color: white;margin-left: 430px;">Back</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+      <label>Total:</label>
+        {{total}}
+      <div style="height:30px;width: 100px;background-color: green;"></div>
+      <br>
+
+
+      <center><h1>Cart</h1>
+      <a href="http://127.0.0.1:8000/ecommerceapp/address/" class="btn btn-primary">Shop Now Now</a><br>
+          </center>
+    {% for i,j,k,l,o,p,q,r,s in data %}
+    {% if q == userid %}
+    <div class="container-fluid" >
+        <div class="row" style="float: left;margin-left: 50px;margin-top: 20px;">
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static i %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{j}}</h5>
+
+                        <p class="card-text">{{l}}</p>
+                        <p style="display: inline;">Category :</p>
+                        <p style="display: inline;">{{p}}</p><br><br>
+
+                        <label>Quantity:</label><br>
+                        <a href="http://127.0.0.1:8000/ecommerceapp/cartincr/{{s}}" class="btn btn-primary">+</a>
+                        <input type="number" value="{{r}}"><br>
+                        <a href="http://127.0.0.1:8000/ecommerceapp/cartdec/{{s}}" class="btn btn-primary">-</a>
+<!--                        <p>{{r}}</p>-->
+                        <p style="display: inline;">Price:</p>
+                        <p style="display: inline;" class="card-text">{{k}}</p><br><br>
+
+                        <a href="http://127.0.0.1:8000/ecommerceapp/cartremove/{{s}}" class="btn btn-primary">Remove</a><br>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+     {% endif %}
+    {% endfor %}
+
+<div>
+
+
+</div>
+</body>
+
+</html>

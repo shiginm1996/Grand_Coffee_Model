@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <style>
+    body{
+      background-image: url({% static 'buyerlog.jpg' %});
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div style="height: 540px;width: 650px;margin-left: 250px;margin-top: 50px;background-color: blue;box-shadow: 2px 2px 2px white;border-radius: 10px;">
+
+
+    <div style="height: 540px;width: 450px;float: left;background-color: rgb(41, 41, 76);"><br>
+      <a href="http://127.0.0.1:8000/ecommerceapp/buyerlogout/" style="margin-left: 250px;text-decoration: none;color: black;font-size: 20px;color: white;" ><i><b>Log Out</b></i></a>
+      <center>
+      <h1 style="text-shadow: 2px 2px 2px black;color: white;"><i>User Profile</i></h1>
+      </center>
+      <label  style="margin-left: 10px;color: white;">First Name:</label>
+      <div style="height: 40px;width: 300px;background-color: rgb(185, 182, 182);margin-left: 30px;">{{data.fname}}</div><br>
+      <label for="" style="margin-left: 10px;color: white;">Last Name:</label>
+      <div style="height: 40px;width: 300px;background-color:rgb(185, 182, 182) ;margin-left: 30px;">{{data.lname}}</div><br>
+      <label for="" style="margin-left: 10px;color: white;">Email:</label>
+      <div style="height: 40px;width: 300px;background-color: rgb(185, 182, 182);margin-left: 30px;">{{data.email}}</div><br>
+      <label for="" style="margin-left: 10px;color: white;">Phone Number:</label>
+      <div style="height: 40px;width: 300px;background-color: rgb(185, 182, 182);margin-left: 30px;">{{data.phone}}</div><br>
+      <label for="" style="margin-left: 10px;color: white;">User Name:</label>
+      <div style="height: 40px;width: 300px;background-color: rgb(185, 182, 182);margin-left: 30px;">{{data.uname}}</div><br>
+
+    </div>
+
+    <div style="height: 540px;width: 250px;float: left;background-color: rgb(41, 41, 76);">
+      <div style="height: 210px;width: 230px;border-radius: 10px;margin-top: 5px;margin-left: 10px;">
+        <img src="/static/{{img}}" alt="" height="210px" width="230px" style="border-radius: 10px;">
+      </div>
+      <center>
+      <h1 style="text-shadow: 1px 1px 1px black;color: white;"><i>{{data.fname}}.{{data.lname}}</i></h1>
+
+      <div style="height: 40px;width: 230px;background-color: rgb(216, 194, 194);"><a href="http://127.0.0.1:8000/ecommerceapp/cartdisp/">Orders</a></div>
+      <div style="height: 40px;width: 230px;background-color: rgb(174, 158, 158);margin-top: 5px;"><a href="http://127.0.0.1:8000/ecommerceapp/buyerproductview/" style="text-decoration: none;color: black;" >Carts</a></div>
+      <div style="height: 40px;width: 230px;background-color: rgb(194, 183, 183);margin-top: 5px;"><a href="http://127.0.0.1:8000/ecommerceapp/wishlistdisplay/">Wish List</a></div>
+      <div style="height: 40px;width: 230px;background-color: rgb(218, 196, 196);margin-top: 5px;">Feedback & Complaints</div>
+      <div style="height: 40px;width: 110px;background-color: rgb(218, 196, 196);float: left;margin-left: 10px;margin-top: 10px;"><a href="http://127.0.0.1:8000/ecommerceapp/buyerprofedit/{{data.id}}" style="text-decoration: none;color: black;">Edit Profile</a></div>
+      <div style="height: 40px;width: 110px;background-color: rgb(218, 196, 196);float: left;margin-top: 10px;margin-left: 10px;">Delete Profile</div>
+
+    </center>
+    </div>
+
+  </div>
+
+</body>
+</html>

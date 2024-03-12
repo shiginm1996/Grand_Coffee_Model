@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0d3236b76b.js" crossorigin="anonymous"></script>
+<style>
+    @media (min-width: 1025px) {
+        .h-custom {
+            height: 100vh !important;
+        }
+    }
+    #aa{
+            background-image: url({% static 'paymentback.jpg' %});
+            background-repeat: no-repeat;
+            background-size: 180%;
+        }
+</style>
+    <script>
+        function fun1(){
+        alert('Payment successful....')
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="aa">
+    <div style="height: auto;width: 1000px;background-color: rgb(165, 140, 149);margin-left: 200px;margin-top: 12px;border-radius: 20px;">
+        <div style="height: 693px;width: 450px;float: left;background-color: white;border-bottom-left-radius: 20px;border-top-left-radius: 20px;">
+
+            <div class="card">
+                <div class="card-body">
+
+                    <div >
+
+                        <div >
+                            <h5 class="mb-3"><a href='http://127.0.0.1:8000/ecommerceapp/cartdisp/' class="text-body"><i
+                                        class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
+                            <hr>
+
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div>
+
+                                        <p style="margin-left: 110px;font-size: 25px;"><b>Order Summary</b></p>
+                                    <p>You have {{qty}} items in your Order list</p>
+                                </div>
+
+                            </div>
+                            {% for i,j,k,l,o,p,q,r,s in data %}
+                            {% if q == userid %}
+                            <div class="card mb-3"  style="box-shadow: 3px 3px 3px black;">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <div>
+                                                <img src="{% static i %}"
+                                                    class="img-fluid rounded-3" alt="Shopping item"
+                                                    style="width: 65px;">
+                                            </div>
+                                            <div class="ms-3">
+                                                <h5>{{j}}</h5>
+                                                <p class="small mb-0">{{l}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center">
+                                            <div style="width: 50px;">
+                                                <h5 class="fw-normal mb-0">{{r}}</h5>
+                                            </div>
+                                            <div style="width: 80px;">
+                                                <h5 class="mb-0">₹ {{k}}.00</h5>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endif %}
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div style="height: 693px;width: 400px;float: left;">
+
+
+            <div style="border-top-right-radius: 20px;border-bottom-right-radius: 20px;">
+
+                <div class="card bg-primary text-white rounded-3" style="border-top-right-radius: 20px;">
+
+                    <div class="card-body">
+                        <center>
+                            <img src="{% static 'PAYMENT2.png' %}" height="74px" width="330px" style="margin-top: 10px;margin-left: 5px;">
+                            <h2 style="text-shadow: 3px 2px 2px black;">CARD DETAILS</h2>
+                        </center>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+
+                        </div>
+
+
+
+                        <form class="mt-4" method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <div class="form-outline form-white mb-4">
+                                <input type="text" id="typeName"
+                                    class="form-control form-control-lg" siez="17"
+                                    placeholder="Cardholder's Name"  style="height: 10px;width: 350px;" name="cardname">
+                                <label class="form-label" for="typeName">Cardholder's Name</label>
+                            </div>
+
+                            <div class="form-outline form-white mb-4">
+                                <input type="text" id="typeText"
+                                    class="form-control form-control-lg" siez="17"
+                                    placeholder="1234 5678 9012 3457" minlength="19"
+                                    maxlength="19" name="cardno">
+                                <label class="form-label" for="typeText">Card Number</label>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="form-outline form-white">
+                                        <input type="text" id="typeExp"
+                                            class="form-control form-control-lg"
+                                            placeholder="MM/YYYY" size="7" id="exp" minlength="7"
+                                            maxlength="7" name="expairy">
+                                        <label class="form-label" for="typeExp">Expiration</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-outline form-white">
+                                        <input type="password" id="typeText"
+                                            class="form-control form-control-lg"
+                                            placeholder="&#9679;&#9679;&#9679;" size="1"
+                                            minlength="3" maxlength="3" name="cvv">
+                                        <label class="form-label" for="typeText">Cvv</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        <hr class="my-4">
+
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-2">Subtotal</p>
+                            <p class="mb-2">₹ {{total}}.00</p>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-2">Shipping</p>
+                            <p class="mb-2">₹ 0.00</p>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-4">
+                            <p class="mb-2">Total(Incl. taxes)</p>
+                            <p class="mb-2">₹ {{total}}.00</p>
+                        </div>
+
+                        <a href="http://127.0.0.1:8000/ecommerceapp/preview/"><button type="submit" class="btn btn-info btn-block btn-lg" onclick="fun1()">
+                            <div class="d-flex justify-content-center">
+<!--                                <span>₹ {{total}}.00</span>-->
+                                <span>&nbsp;&nbsp;Confirm <i
+                                        class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                            </div>
+                        </button></a>
+                            </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

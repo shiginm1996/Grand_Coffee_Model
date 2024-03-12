@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-image: url({% static 'cofee4.jpg' %});
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="height: 450px;width: 500px;margin-left: 400px;margin-top: 150px;background-color: rgb(205, 178, 178);box-shadow: 15px 15px 15px black;border-radius: 10px;">
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+            <center>
+                <h1 style="padding-top: 30px;text-shadow: 2px 2px 2px black;">Product Edit</h1>
+            </center>
+            <label for="" style="font-size: large;margin-left: 50px; " ><b>Product Image :</b></label>
+            <input type="file" name="pimage" value="{{img.pimage}}"><br><br>
+            <label for="" style="font-size: large;margin-left: 50px;"><b>Product Name :</b></label>
+            <input type="text" style="height: 25px;width: 235px;" name="pname" value="{{data.pname}}"><br><br>
+            <label style="font-size: large;margin-left: 30px;"><b>Product Category:</b></label>
+            <select class="form-select" aria-label="Default select example" style="height: 25px;width: 240px;" name="pcategory">
+                <option selected value="{{data.category}}">Select...</option>
+                <option value="Coffee" name="coffee">Coffee</option>
+                <option value="cpowders" name="cpowders">Coffee Powders</option>
+                <option value="cmugs" name="cmugs">Coffee mugs</option>
+                <option value="cmachines" name="cmachines">Coffee machines</option>
+                <option value="cblenders" name="cblenders">Coffee blenders</option>
+            </select><br><Br>
+            <label for="" style="font-size: large;margin-left: 116px;"><b>Price :</b></label>
+            <input type="number" style="height: 25px;width: 235px;" name="price" value="{{data.price}}"><br><br>
+            <label for="" style="font-size: large;margin-left: 70px;"><b>Description :</b></label>
+            <textarea name="pdes" id="" cols="30" rows="5" >{{data.pdes}}</textarea><br><br><br>
+            <button type="submit"
+                style="height: 30px;width: 150px;margin-left: 170px;border: none;background-color: rgb(241, 240, 232);border-radius: 20px;box-shadow: 5px 5px 5px black;" ><b>Update</b></button>
+
+
+
+        </form>
+    </div>
+</body>
+
+</html>

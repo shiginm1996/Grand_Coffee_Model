@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Gallery</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">Your Gallery</h1>
+
+    <div class="gallery">
+        <!-- Replace the placeholder URLs with your actual image URLs -->
+        <img src="{% static 'cofee5_9CMJiOw.jpg' %}" alt="Image 1" style="height:250px;">
+        <img src="{% static 'cmg4.webp' %}" alt="Image 2" style="height:250px;">
+        <img src="{% static 'cms2.webp' %}" alt="Image 3" style="height:250px;">
+        <!-- Add more images as needed -->
+    </div>
+    <div class="gallery">
+        <!-- Replace the placeholder URLs with your actual image URLs -->
+        <img src="{% static 'flat_coffee.jpg' %}" alt="Image 1" style="height:250px;">
+        <img src="{% static 'drip_cofee.jpg' %}" alt="Image 2" style="height:250px;">
+        <img src="{% static 'coffee8_KQ0dQu7.jpeg' %}" alt="Image 3" style="height:250px;">
+        <!-- Add more images as needed -->
+    </div>
+    <div class="gallery">
+        <!-- Replace the placeholder URLs with your actual image URLs -->
+        <img src="{% static 'cp3.webp' %}" alt="Image 1" style="height:250px;">
+        <img src="{% static 'cp14.webp' %}" alt="Image 2" style="height:250px;">
+        <img src="{% static 'cmg3.webp' %}" alt="Image 3" style="height:250px;">
+        <!-- Add more images as needed -->
+    </div>
+        <div class="gallery">
+        <!-- Replace the placeholder URLs with your actual image URLs -->
+        <img src="{% static 'cofee2.jpeg' %}" alt="Image 1" style="height:250px;">
+        <img src="{% static 'espresso.jpeg' %}" alt="Image 2" style="height:250px;">
+        <img src="{% static 'halwatea_h2x0zzE.jpeg' %}" alt="Image 3" style="height:250px;">
+        <!-- Add more images as needed -->
+    </div>
+
+    <div class="gallery">
+        <!-- Replace the placeholder URLs with your actual image URLs -->
+        <img src="{% static 'cmg4.webp' %}" alt="Image 1" style="height:250px;">
+        <img src="{% static 'cms2.webp' %}" alt="Image 2" style="height:250px;">
+        <img src="{% static 'coffee3_R1ECYct.jpg' %}" alt="Image 3" style="height:250px;">
+        <!-- Add more images as needed -->
+    </div>
+
+</body>
+
+</html>

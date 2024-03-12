@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/0d3236b76b.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+.address-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+address {
+    font-style: normal;
+    margin-top: 15px;
+}
+
+address p {
+    margin: 8px 0;
+}
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Display</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Delivery Address</h1>
+    </header>
+
+
+    <div class="address-container">
+        <center>
+        <h1>Contact Information</h1>
+        </center>
+
+
+        <address>
+              {% for i,j,k,l,m,n,o,p in mylist %}
+        {% if user == o %}
+            <a href="http://127.0.0.1:8000/ecommerceapp/address_edit/{{p}}" style="margin-left:450px;"><i class="fa-solid fa-pen"></i></a>
+            <p style="margin-left:50px;"><strong>Full Name:</strong><input value="{{i}}" style="margin-left:42px;"></p>
+            <p style="margin-left:50px;"><strong>Address:</strong> <input value="{{j}}" style="margin-left:50px;height:80px;"></p>
+            <p style="margin-left:50px;"><strong>Phone:</strong> <input value="{{k}}" style="margin-left:65px;"></p>
+            <p style="margin-left:50px;"><strong>Steet Name:</strong> <input value="{{l}}" style="margin-left:26px;"></p>
+            <p style="margin-left:50px;"><strong>State:</strong> <input value="{{m}}" style="margin-left:75px;"></p>
+            <p style="margin-left:50px;"><strong>Country:</strong> <input value="{{n}}" style="margin-left:52px;"></p>
+            {% endif %}
+        {% endfor %}
+        </address>
+
+        <a href="http://127.0.0.1:8000/ecommerceapp/cartdisp/" style="margin-left:450px;"><-Back</a>
+
+    </div><br><br>
+ <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+
+</body>
+</html>

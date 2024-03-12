@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Preview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function fun1(){
+        alert('Order Successful....')
+        }
+    </script>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <header>
+        <h1>Transaction Preview</h1>
+    </header>
+
+    <main>
+        {% for i,j,k,l,m,n,o,p,q,r,s in mylist %}
+
+            {% if user == s %}
+
+
+        <section>
+
+            <h2>Transaction Details</h2>
+            <img src="{% static i %}" height="150px" width="250px">
+            <input type="text" hidden="hidden" value="{{t}}">
+            <p style="margin-top:5px;"><b>Prdouct Name: </b><b><input type="text" value="Coffee" style="margin-left:25px;" name="pname"></b></p>
+            <p><strong>Date:</strong> <input type="text" value="{{j}}" style="margin-left:97px;" name="bdate"></p>
+            <p><strong>Amount:</strong> <input type="text" value="{{k}}" style="margin-left:70px;" name="amount"></p>
+            <p><strong>Description:</strong> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspProduct Purchase</p>
+        </section>
+
+        <section>
+            <h2>Payment Information</h2>
+            <p><strong>Card Type:</strong> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspVisa</p>
+            <p><strong>Card Number:</strong><input type="text" value="XXX XXX XXX XX{{l}}" style="margin-left:30px;" name="cno"> </p>
+            <p><strong>Expiry Date:</strong> <input type="text" value="{{n}}" style="margin-left:40px;" name="expiry"></p>
+        </section>
+
+        <section style="text-decoration: none;">
+            <h2>Address Information</h2>
+            <p><strong>Street:</strong> <input type="text" value="{{o}}" style="margin-left:80px;" name="street"></p>
+            <p><strong>Country:</strong> <input type="text" value="{{p}}" style="margin-left:65px;" name="state"></p>
+            <p><strong>State:</strong> <input type="text" value="{{q}}" style="margin-left:85px;" name="country"></p>
+            <p><strong>Zip Code:</strong> <input type="text" value="{{r}}" style="margin-left:55px;" name="zip"></p>
+        </section>
+        <section style="text-decoration: none;">
+            <center>
+            <a href=""><button type="submit" class="btn btn-info btn-block btn-lg" onclick="fun1()">Place Order</button></a>
+            </center>
+        </section>
+
+        <!-- Add more sections or customize the content based on your needs -->
+
+        {% endif %}
+        {% endfor %}
+    </main><br><br>
+    </form>
+
+    <footer>
+        <p>&copy; 2023 Grand Coffee</p>
+    </footer>
+
+</body>
+</html>

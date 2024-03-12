@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/0d3236b76b.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 0.5em;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><i class="fa-solid fa-mug-hot" style="color: #f6f4fb;"></i> GRAND COFFEE <i class="fa-solid fa-mug-hot" style="color: #f6f4fb;"></i></h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+        <a href="http://127.0.0.1:8000/ecommerceapp/prof/">Back</a>
+        <!-- Add more links as needed -->
+    </nav>
+
+    <section>
+        <h2>Customer Order Details</h2>
+
+        <!-- Your table with customer order details -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Product Name</th>
+                    <th>Booking Date</th>
+                    <th>Amount</th>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add rows with customer order details here -->
+                {% for i,j,k,l in mylist %}
+                <tr>
+                    <td>100{{ forloop.counter }}</td>
+                    <td>{{l}}</td>
+                    <td>Coffee Product</td>
+                    <td>{{j}}</td>
+                    <td>{{k}}</td>
+                    <!-- Add more cells as needed -->
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Grand Coffee. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

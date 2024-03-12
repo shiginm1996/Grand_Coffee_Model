@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/0d3236b76b.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordered List Page</title>
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #4285f4;
+        }
+
+        ol {
+            list-style: decimal;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4285f4;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #1a73e8;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        p {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+<body>
+    <img src="{% static 'ordersuccess.png' %}" alt="">
+    <!-- <i class="fa-solid fa-circle-check" style="color: blue;font-size: 50px;"></i> -->
+    <h1 style="text-shadow: 3px 3px 3px black;color: red;">Order Successful....</h1>
+    <h5 style="text-shadow: 3px 3px 3px black;">Thank You so much for your Order</h5>
+
+
+    <p ><a href="http://127.0.0.1:8000/ecommerceapp/buyerprof">Go to Home Page</a></p>
+
+    <script>
+        // Optional: You can add more JavaScript for additional animations or interactions.
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url({% static 'cofee1.jpg' %});
+            background-repeat: no-repeat;
+            background-size: 120%;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div style="height: 650px;width: 450px;background-color: rgb(46, 52, 46);margin-left: 700px;">
+
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <center>
+        <h1 style="color: white;text-shadow: 5px 5px 5px black;">Seller Registration</h1>
+
+        <img src="{% static 'download.png' %}" alt="" height="80px" width="150px" ><br><br>
+        <input type="file" name="imgup" placeholder="Name" style="width: 200px;height: 20px;"><br><br>
+        <input type="text" name="sname" placeholder="Name" style="width: 200px;height: 20px;"><br><br>
+        <input type="email" name="email" placeholder="Email" style="width: 200px;height: 20px;"><br><br>
+        <input type="number" name="phone" placeholder="Phone Number" style="width: 200px;height: 20px;"><br><br>
+        <input type="text" name="cname" placeholder="Company Name" style="width: 200px;height: 20px;"><br><br>
+        <input type="text" name="tl" placeholder="Trade License No:" style="width: 200px;height: 20px;"><br><br>
+        <input type="text" name="caddress" placeholder="Company Address" style="width: 200px;height: 20px;"><br><br>
+        <input type="text" name="usernm" placeholder="User Name" style="width: 200px;height: 20px;"><br><br>
+        <input type="password" name="password" placeholder="Password" style="width: 200px;height: 20px;"><br><br>
+        <input type="password" name="cpassword" placeholder="Confirm Password" style="width: 200px;height: 20px;"><br><Br>
+
+        <button type="submit" style="background-color: green;height: 30px; width: 150px; border: none;border-radius: 20px; box-shadow: 5px 5px 5px black;">Register</button>
+
+    </center>
+    </form>
+</div>
+</body>
+</html>

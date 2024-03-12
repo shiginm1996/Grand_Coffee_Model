@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Delivery Address</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+    <script>
+        function funedit(){
+        alert('Updated successfullyy...')
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Edit Delivery Address</h1>
+    </header>
+
+    <main>
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" value="{{a.name}}">
+
+            <label for="address">Address Line 1:</label>
+            <input type="text" id="address" name="address" value="{{a.delivery_add}}">
+
+            <!-- <label for="address2">Address Line 2:</label>
+            <input type="text" id="address2" name="address2"> -->
+
+            <label for="phone">Phone:</label>
+            <input type="number" id="phone" name="phone" value="{{a.phone}}">
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" value="{{a.streetname}}">
+
+            <label >State:</label>
+            <select id="country" name="state" >
+                <!-- Add options for countries as needed -->
+                <option value="{{a.state}}">{{a.state}}</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Tamilnadu">Tamilnadu</option>
+                <option value="Karnataka">Karnataka</option>
+                <!-- Add more options based on your requirements -->
+            </select>
+
+            <label for="zip">PIN Code:</label>
+            <input type="text" id="zip" name="zip" value="{{a.pin}}">
+
+            <label for="country">Country:</label>
+            <select id="" name="country" required>
+                <!-- Add options for countries as needed -->
+                <option value="{{a.country}}">{{a.country}}</option>
+                <option value="India">India</option>
+                <option value="UnitedState">United States</option>
+                <option value="Canada">Canada</option>
+                <!-- Add more options based on your requirements -->
+            </select>
+
+            <button type="submit" onclick="funedit()">Update</button>
+            <br><br>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>

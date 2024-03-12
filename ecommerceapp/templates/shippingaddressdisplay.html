@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <table border="1">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Pin</th>
+            <th>Delivery Address</th>
+            <th>Phone:</th>
+            <th>Street Name</th>
+
+             <th>Street Name</th>
+             <th>State</th>
+            <th>Country</th>
+            <th>Back</th>
+
+        </tr>
+
+        {% for i in data %}
+            {% if user == i.userid %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.lname}}</td>
+            <td>{{i.pin}}</td>
+            <td>{{i.pin}}</td>
+            <td>{{i.delivery_address}}</td>
+            <td>{{i.phone}}</td>
+            <td>{{i.streetname}}</td>
+            <td>{{i.state}}</td>
+            <td>{{i.country}}</td>
+            <td><a href="http://127.0.0.1:8000/ecommerceapp/cartdisp/"></a></td>
+
+
+        </tr>
+
+        {% endif %}
+    {% endfor %}
+    </table>
+    <a href="http://127.0.0.1:8000/ecommerceapp/add_new_add/">Create New</a>
+    <a href="http://127.0.0.1:8000/ecommerceapp/confirmorder/">Preview</a>
+</body>
+</html>

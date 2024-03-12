@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/0d3236b76b.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-image: url({% static 'coffee3.jpg' %});
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <div
+        style="height: 500px;width: 400px;margin-left: 250px;margin-top: 100px;  border: 1px grey solid; border-radius: 10px;    ">
+        <form method="post">{% csrf_token %}
+        <h3 style="color: white;margin-left: 120px;font-size: 30px;text-shadow: 1px 1px 1px white;">Seller Login</h3>
+        <img src="{% static 'download.png' %}" alt="" height="80px" width="150px" style="margin-left: 120px;"><br><br>
+
+
+        <input type="text" placeholder="Email or Phone Number"
+            style="height: 30px; width: 260px;margin-left: 70px;" name="phone"><br>
+        <input type="password" placeholder="Password"
+            style="height: 30px;width: 260px;margin-left: 70px;margin-top: 20px;" name="passw"><br>
+        <button
+            style="height: 35px;width: 260px;margin-left: 70px;margin-top: 20px;background-color: blue;border: none;border-radius: 6px;"
+            id="a">Login</button><br><br>
+        <a href="" style="margin-left: 140px;color: blue;">Forgot Password?</a><br><br>
+        <button
+            style="margin-left: 70px;height: 35px;width: 260px;background-color: green;border: none;border-radius: 6px;text-decoration: none;"
+            id="a">
+            <a href="http://127.0.0.1:8000/ecommerceapp/sreg/" class="btn" style="text-decoration: none;">Create New
+                Account</a>
+        </button><br>
+            <a href="http://127.0.0.1:8000/ecommerceapp/index/" style="margin-left: 200px;font-size: 15px;text-decoration: none;color: white;margin-top: 10px;">Back</a>
+
+        </form>
+
+    </div>
+
+
+</body>
+
+</html>

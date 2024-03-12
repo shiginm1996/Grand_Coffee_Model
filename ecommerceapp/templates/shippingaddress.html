@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    :root {
+  --color-gray: #737888;
+  --color-lighter-gray: #e3e5ed;
+  --color-light-gray: #f7f7fa;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--color-gray);
+}
+
+hr {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-light-gray);
+  border: 0;
+  margin: 2rem 0;
+}
+
+.container {
+  max-width: 40rem;
+  padding: 10vw 2rem 0;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-lighter-gray);
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+.field__label {
+  color: var(--color-gray);
+  font-size: 0.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem
+}
+
+.field__input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+.field:focus-within {
+  border-color: #000;
+}
+
+.fields {
+  display: grid;
+  grid-gap: 1rem;
+}
+.fields--2 {
+  grid-template-columns: 1fr 1fr;
+}
+.fields--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button {
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: block;
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+.button:focus-visible {
+  background-color: #333;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+  <h1>Shipping</h1>
+  <p>Please enter your shipping details.</p>
+  <hr />
+      <form method="post" enctype="multipart/form-data">{% csrf_token %}
+  <div class="form">
+
+
+  <div class="fields fields--2">
+    <label class="field">
+      <span class="field__label" for="firstname">First name</span>
+      <input class="field__input" type="text" id="firstname" name="name">
+    </label>
+    <label class="field">
+      <span class="field__label" for="lastname">Last name</span>
+      <input class="field__input" type="text" name="lname">
+    </label>
+  </div>
+  <label class="field">
+    <span class="field__label" for="address" >Address</span>
+    <input class="field__input" type="text" id="address" name="delivery_add" />
+  </label>
+  <label class="field">
+    <span class="field__label" for="country">Country</span>
+    <select class="form-select" aria-label="Default select example" name="country">
+          <option selected>select</option>
+          <option value="India">India</option>
+    </select>
+  </label>
+  <div class="fields fields--3">
+    <label class="field">
+      <span class="field__label" for="zipcode">Zip code</span>
+      <input class="field__input" type="text" id="zipcode" name="pin" />
+    </label>
+    <label class="field">
+      <span class="field__label" for="city">City</span>
+      <input class="field__input" type="text" id="city" name="streetname"/>
+    </label>
+    <label class="field">
+      <span class="field__label" for="phone">Phone</span>
+      <input class="field__input" type="number" id="phone" name="phone" />
+    </label>
+    <label class="field">
+      <span class="field__label" for="state">State</span>
+      <select class="form-select" aria-label="Default select example" name="state">
+          <option selected>select</option>
+          <option value="Kerala">Keraka</option>
+          <option value="Tamilnadu">Tamilnadu</option>
+          <option value="Karnataka">Karnataka</option>
+    </select>
+    </label>
+  </div>
+
+
+  </div>
+
+  <hr>
+  <button class="button" type="submit">Continue</button>
+        </form>
+      <a href="">Back</a>
+</div>
+</body>
+</html>
